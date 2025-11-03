@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////
 //
 //  Function Name : PrintEven
-//  Description : Accepts one numbers and print the first iNo even number
+//  Description : Accepts one numbers and print its even factor 
 //  Input : int
 //  Output : void
 //  Author:Pallavi Kishanrao Hivrale
@@ -11,16 +11,21 @@
 
 #include<stdio.h>
 
-void PrintEven(int iNo)
+void DisplayFactor(int iNo)
 {
+    int i = 0;
+
     if(iNo <= 0)
     {
-        return;
+       iNo = -iNo;
     }
-    for(int iCnt=1; iCnt<= iNo; iCnt++)
+    for(i=2; i<= iNo; i+=2)
     {
-        printf("%d\n", 2*iCnt);
-    }
+        if(iNo % i == 0)
+        {
+            printf("%d\n",i);
+        }
+    }   
 }
 
 int main()
@@ -30,7 +35,7 @@ int main()
     printf("Enter number : ");
     scanf("%d", &iValue);
 
-    PrintEven(iValue);
+    DisplayFactor(iValue);
 
     return 0;
 }
