@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////
 //
 //  Function Name : Display
-//  Description : Accepts a number and prints many * on screen
+//  Description : Accepts a number from user and print msg on screen
 //  Input : int
 //  Output : void
 //  Author:Pallavi Kishanrao Hivrale
@@ -13,13 +13,13 @@
 
 void Display(int iNo)
 {
-    int iCnt = 0;
-    //write updator
-
-    while(iCnt<iNo)
+    if(iNo < 10)
     {
-        printf("*\n");
-        iCnt++;
+    printf("Hello\n");
+    }
+    else
+    {
+    printf("Demo\n");
     }
 }
 int main()
@@ -33,3 +33,4 @@ int main()
 
     return 0;
 }
+

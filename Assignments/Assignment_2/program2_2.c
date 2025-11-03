@@ -1,10 +1,10 @@
 ///////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : Display
-//  Description : Accepts a number and prints many * on screen
+//  Function Name : DivisionTwoNumber
+//  Description : it prints '*' on screen as per input number
 //  Input : int
 //  Output : void
-//  Author:Pallavi Kishanrao Hivrale
+//  Author: Pallavi Kishanrao Hivrale
 //  Date : 25/10/2025
 //
 ///////////////////////////////////////////////////////////////////////////
@@ -13,20 +13,18 @@
 
 void Display(int iNo)
 {
-    int iCnt = 0;
-    //write updator
-
-    while(iCnt<iNo)
+    while(iNo > 0)
     {
-        printf("*\n");
-        iCnt++;
+        print("*");
+        iNo--;
     }
 }
+
 int main()
 {
     int iValue = 0;
-
-    printf("Enter number : ");
+    
+    printf("Enter number");
     scanf("%d",&iValue);
 
     Display(iValue);
