@@ -1,22 +1,20 @@
 #include<stdio.h>
 
-int MultFact(int iNo)
+int SumNonFact(int iNo)
 
 {
-    int iMult = 1;
-    for(int i =1; i<=iNo/2; i++)
+    int iSum = 0;
+    for(int i=1; i<iNo; i++)
     {
-        if(iNo % i == 0)
+        if(iNo % i !=0)
         {
-            iMult*=i;
+            iSum+=i;
         }
     }
-
-    return iMult;
+    return iSum;
 }
 
 int main()
-
 {
 
 int iValue = 0;
@@ -26,7 +24,8 @@ int iRet = 0;
 printf("Enter number\n");
 scanf("%d",&iValue);
 
-iRet = MultFact(iValue);
+iRet = SumNonFact(iValue);
+
 printf("%d", iRet);
 
 return 0;

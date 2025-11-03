@@ -1,18 +1,15 @@
 #include<stdio.h>
 
-int MultFact(int iNo)
+void FactRev(int iNo)
 
 {
-    int iMult = 1;
-    for(int i =1; i<=iNo/2; i++)
+    for(int i=iNo/2; i>=1; i--)
     {
         if(iNo % i == 0)
         {
-            iMult*=i;
+            printf("%d\n",i);
         }
     }
-
-    return iMult;
 }
 
 int main()
@@ -21,13 +18,11 @@ int main()
 
 int iValue = 0;
 
-int iRet = 0;
-
 printf("Enter number\n");
+
 scanf("%d",&iValue);
 
-iRet = MultFact(iValue);
-printf("%d", iRet);
+FactRev(iValue);
 
 return 0;
 
