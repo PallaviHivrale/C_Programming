@@ -1,10 +1,10 @@
 #include<stdio.h>
 
-void print_numbers(int limit)
+void print_odd_numbers(int limit)
 {
     int iCnt =1;
 
-    for(iCnt = 1; iCnt <= limit; iCnt++)
+    for(iCnt = 1; iCnt <= limit; iCnt+=2)
     {
         printf("%d\n",iCnt);
     }
@@ -19,6 +19,6 @@ int main()
     printf("Enter number : ");
 
     scanf("%d",&limit);
-    print_numbers(limit);
+    print_odd_numbers(limit);
     return 0;
 }

@@ -1,13 +1,14 @@
 #include<stdio.h>
 
-void print_numbers(int limit)
+int sum_natural_numbers(int limit)
 {
-    int iCnt =1;
+    int iCnt =0, iSum = 0;
 
     for(iCnt = 1; iCnt <= limit; iCnt++)
     {
-        printf("%d\n",iCnt);
+        iSum = iSum +iCnt;
     }
+    return iSum;
 }
 
 // Time Complexity : O(N)
@@ -15,10 +16,9 @@ void print_numbers(int limit)
 int main()
 {
     int limit;
-
     printf("Enter number : ");
 
     scanf("%d",&limit);
-    print_numbers(limit);
+    printf("%d\n", sum_natural_numbers(limit));
     return 0;
 }

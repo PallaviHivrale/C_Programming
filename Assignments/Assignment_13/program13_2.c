@@ -1,16 +1,16 @@
 #include<stdio.h>
 
-void print_numbers(int limit)
+void print_even_numbers(int limit)
 {
-    int iCnt =1;
+    int iCnt =2;
 
-    for(iCnt = 1; iCnt <= limit; iCnt++)
+    for(iCnt = 2; iCnt <= limit; iCnt+=2)
     {
         printf("%d\n",iCnt);
     }
 }
 
-// Time Complexity : O(N)
+// Time Complexity : O(N/2)
 
 int main()
 {
@@ -19,6 +19,6 @@ int main()
     printf("Enter number : ");
 
     scanf("%d",&limit);
-    print_numbers(limit);
+    print_even_numbers(limit);
     return 0;
 }
