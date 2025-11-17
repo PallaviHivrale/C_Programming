@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int CountEven(int iNo)
+int CountRange(int iNo)
 {
     int iCnt = 0, iDigit = 0;
 
@@ -9,15 +9,10 @@ int CountEven(int iNo)
         iNo = -iNo;
     }
 
-    if(iNo == 0)
-    {
-        return 1;
-    }
-
     while(iNo != 0)
     {
         iDigit = iNo % 10;
-        if(iDigit % 2 == 0)
+        if(iDigit >= 3 && iDigit <=7)
         {
             iCnt++;
         }
@@ -34,7 +29,7 @@ int main()
     printf("Enter number : "); 
     scanf("%d",&iValue);
 
-    iRet = CountEven(iValue);
+    iRet = CountRange(iValue);
 
     printf("%d", iRet);
 

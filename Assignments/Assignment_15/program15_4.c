@@ -1,8 +1,8 @@
 #include<stdio.h>
 
-int CountEven(int iNo)
+int MultiDigits(int iNo)
 {
-    int iCnt = 0, iDigit = 0;
+    int iDigit = 0, iMul = 1;
 
     if(iNo<0)
     {
@@ -11,19 +11,16 @@ int CountEven(int iNo)
 
     if(iNo == 0)
     {
-        return 1;
+        return 0;
     }
 
     while(iNo != 0)
     {
         iDigit = iNo % 10;
-        if(iDigit % 2 == 0)
-        {
-            iCnt++;
-        }
-         iNo = iNo/10; 
+        iMul = iMul * iDigit;
+        iNo = iNo/10; 
     }
-    return iCnt;
+    return iMul;
 }
 
 int main()
@@ -34,7 +31,7 @@ int main()
     printf("Enter number : "); 
     scanf("%d",&iValue);
 
-    iRet = CountEven(iValue);
+    iRet = MultiDigits(iValue);
 
     printf("%d", iRet);
 
