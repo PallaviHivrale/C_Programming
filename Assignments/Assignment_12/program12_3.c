@@ -1,8 +1,8 @@
 #include <stdio.h>
-
-void print_factors(int number)
+ 
+int sum_of_factors(int number)
 {
-    int i;
+    int i=0, iSum=0;
     if (number < 0)
     {
         number = -number;
@@ -12,11 +12,10 @@ void print_factors(int number)
     {
         if (number % i == 0)
         {
-            printf("%d ", i);
+            iSum = iSum+i;
         }
     }
-
-    printf("\n");
+    return iSum;
 }
 
 int main()
@@ -24,9 +23,9 @@ int main()
     int number;
 
     printf("Enter number: ");
-    scanf("%d", &number);
 
-    print_factors(number);
+    scanf("%d", &number);
+    printf("%d\n",sum_of_factors(number));
 
     return 0;
 }
