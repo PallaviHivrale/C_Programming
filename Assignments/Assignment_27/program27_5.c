@@ -1,13 +1,13 @@
 ////////////////////////////////////////////////////////
 //
-//  File Name : program27_1.c
+//  File Name : program27_5.c
 //  Description :  pattern printing 
 //
-//  Input :  iRow = 4     iCol = 3
-//  Output :    *  *  *   
-//              *  *  *
-//              *  *  *
-//              *  *  *
+//  Input :  iRow = 3     iCol = 4
+//  Output :    1   1   1   1
+//              2   2   2   2
+//              3   3   3   3
+//              4   4   4   4
 //  Author : Pallavi Kishanrao Hivrale
 //  Date :   21/11/25
 //
@@ -24,7 +24,7 @@ void Pattern(int iRow, int iCol)
     {
         for(j=1; j<=iCol; j++)
         {
-            printf("*\t");
+            printf("%d\t",j);
         }
           printf("\n");
     }
