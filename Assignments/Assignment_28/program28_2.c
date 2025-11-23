@@ -1,13 +1,13 @@
 ////////////////////////////////////////////////////////
 //
-//  File Name : program28_1.c
+//  File Name : program28_2.c
 //  Description :  pattern printing 
 //
 //  Input :  iRow = 4    iCol = 4
 //  Output :    A   B   C   D
+//              a   b   c   d
 //              A   B   C   D
-//              A   B   C   D
-//              A   B   C   D
+//              a   b   c   d
 //  Author : Pallavi Kishanrao Hivrale
 //  Date :   21/11/25
 //
@@ -17,19 +17,27 @@
 
 void Pattern(int iRow, int iCol)
 {
-
     int i = 0, j = 0;  
 
     for(i=1; i<= iRow; i++)
     {
-        char ch = 'A';
+        char ch;
         
+        if(i % 2 != 0)
+        {
+            ch ='A';
+        }
+        else
+        {
+           ch = 'a';
+        }
+
         for(j=1; j<=iCol; j++)
         {
             printf("%c\t",ch);
-            ch++;
+            ch++;  
         }
-          printf("\n");
+        printf("\n");
     }
 }
  
