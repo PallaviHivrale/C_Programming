@@ -4,27 +4,29 @@
 //
 ////////////////////////////////////////////////////////////////////////
 
+
 #include<stdio.h>
-////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////
 //
-//  Function Name : Pattern
+//  File Name : program26_4.c
 //  Description : It is used to print patterns on screen 
-//  Input :     Integer 
-//  Output : A B C D E 
+//  Input :  Integer
+//  Output : #   1   *    #   2   *   #   3   *   #   4   *   
 //  Author : Pallavi Kishanrao Hivrale
 //  Date :   21/11/25
 //
-////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+
 void Pattern(int iNo)
 {
-    char ch = 'A';
     int iCnt = 0;
-    
-    for(iCnt=1; iCnt<=iNo; iCnt++)
-    {
-        printf("%c\t",ch);
-        ch++;
+
+    for(iCnt=1; iCnt<= iNo; iCnt++)
+    { 
+        printf("#\t%d\t*\t",iCnt);   
     }
+    printf("\n");
 }
  
 ////////////////////////////////////////////////////////////////////////
@@ -51,6 +53,6 @@ int main()
 //
 //  Input: 5
 //
-//  Output : A  B   C   D   E   
+//  Output : #   1   *    #   2   *   #   3   *   #   4   *  
 //  
 ////////////////////////////////////////////////////////////////////////

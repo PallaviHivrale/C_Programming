@@ -5,34 +5,37 @@
 ////////////////////////////////////////////////////////////////////////
 
 #include<stdio.h>
-////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////
 //
-//  Function Name : Pattern
-//  Description : It is used to print patterns on screen 
-//  Input :     Integer 
-//  Output : A B C D E 
+//  File Name : program26_5.c
+//  Description :  It is used to print patterns on screen 
+//  Input :  Integer
+//  Output : 2 4 6 8 10 12 14 16 
 //  Author : Pallavi Kishanrao Hivrale
 //  Date :   21/11/25
 //
-////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+
+
+
 void Pattern(int iNo)
 {
-    char ch = 'A';
-    int iCnt = 0;
-    
-    for(iCnt=1; iCnt<=iNo; iCnt++)
+    int iCnt = 0;  
+
+    for(iCnt=1; iCnt<= iNo; iCnt++)
     {
-        printf("%c\t",ch);
-        ch++;
+        printf("%d\t",iCnt*2);
     }
+    printf("\n");
 }
- 
+
 ////////////////////////////////////////////////////////////////////////
 //
 //  Entry point function for the application
 //
 ////////////////////////////////////////////////////////////////////////
-
+ 
 int main()
 {
     int iValue = 0;
@@ -49,8 +52,7 @@ int main()
 //
 //  Test cases successfully handled by application
 //
-//  Input: 5
-//
-//  Output : A  B   C   D   E   
+//  Input: 8
+//  Output: 2 4 6 8 10 12 14 16   
 //  
 ////////////////////////////////////////////////////////////////////////
