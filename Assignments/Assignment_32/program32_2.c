@@ -13,9 +13,9 @@
 //  Input :     Integer 
 //  Output :                
 //               *  *   *   #
-//               *  *   #   *
-//               *  #   *   *
-//               #  *   *   *
+//               *  *   #   @
+//               *  #   @   @
+//               #  @   @   @
 //   
 //  Author : Pallavi Kishanrao Hivrale
 //  Date :   23/11/25
@@ -31,13 +31,17 @@ void Pattern(int iRow, int iCol)
     {          
         for(j=1; j<=iCol; j++)
         {
-            if(j == iCol-i+1 )
+            if(j < iCol-i+1 )
+            {
+                printf("*\t");
+            }
+            else if(j == iCol-i+1)
             {
                 printf("#\t");
             }
             else
             {
-                printf("*\t");
+                printf("@\t");
             }
         }
         printf("\n");
@@ -71,8 +75,8 @@ int main()
 //  Input:   iRow= 4  iCol= 4
 //  Output :                
 //               *  *   *   #
-//               *  *   #   *
-//               *  #   *   *
-//               #  *   *   *  
+//               *  *   #   @
+//               *  #   @   @
+//               #  @   @   @  
 //  
 ////////////////////////////////////////////////////////////////////////
