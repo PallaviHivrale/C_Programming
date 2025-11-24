@@ -11,10 +11,12 @@
 //  Function Name : Pattern
 //  Description : It is used to print patterns on screen 
 //  Input :     Integer 
-//  Output :        *
-//                  *   *
-//                  *   *   *
-//                  *   *   *   *
+//  Output :                
+//               $   *   *   *   *
+//               #   $   *   *   *
+//               #   #   $   *   *
+//               #   #   #   $   *
+//               #   #   #   #   $
 //  Author : Pallavi Kishanrao Hivrale
 //  Date :   22/11/25
 //
@@ -29,10 +31,18 @@ void Pattern(int iRow, int iCol)
     {          
         for(j=1; j<=iCol; j++)
         {
-            if(i>=j ) 
+            if(i==j) 
+            {
+                printf("%%\t");
+            } 
+            else if(i>j)
+            {
+                printf("#\t");
+            } 
+            else
             {
                 printf("*\t");
-            }  
+            }
         }
         printf("\n");
     }
@@ -63,9 +73,11 @@ int main()
 //
 //  Input:   iRow= 4  iCol= 4
 //
-//  Output :        *
-//                  *   *
-//                  *   *   *
-//                  *   *   *   *
+//  Output :                
+//               $   *   *   *   *
+//               #   $   *   *   *
+//               #   #   $   *   *
+//               #   #   #   $   *
+//               #   #   #   #   $
 //  
 ////////////////////////////////////////////////////////////////////////
