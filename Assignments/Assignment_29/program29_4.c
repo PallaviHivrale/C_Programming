@@ -1,13 +1,14 @@
 ////////////////////////////////////////////////////////
 //
-//  File Name : program28_5.c
+//  File Name : program29_2.c
 //  Description :  pattern printing 
 //
-//  Input :  iRow = 4    iCol = 4
-//  Output :    1   2   3   4
-//              5   6   7   8   
-//              9   1   2   3
-//              4   5   6   7
+//  Input :  iRow = 5    iCol = 5
+//  Output :    1    2   3   4   5
+//             -1   -2  -3  -4  -5
+//              1    2   3   4   5
+//             -1   -2  -3  -4  -5
+//              1    2   3   4   5
 //  Author : Pallavi Kishanrao Hivrale
 //  Date :   21/11/25
 //
@@ -17,22 +18,21 @@
 
 void Pattern(int iRow, int iCol)
 {
-    int i = 0, j = 0; 
-    int Num = 1;
+    int i = 0, j = 0;  
 
-    for(i=1; i<=iRow; i++)
+    for(i=1; i<= iRow; i++)
     {
         for(j=1; j<=iCol; j++)
         {
-            printf("%d\t",Num);
-            Num++;
-            
-            if(Num == 10)
+            if(i % 2 == 1)
             {
-                Num = 1;
+            printf("%d\t",j);
             }
-        }
-        
+            else
+            {
+                printf("-%d\t",j);
+            }
+       }
         printf("\n");
     }
 }
