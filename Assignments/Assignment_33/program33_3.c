@@ -10,8 +10,8 @@
 
 ////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CheckAlpha
-//  Description : accept character from user and check whether it is alphabet or not(A-Z a-z)
+//  Function Name : ChkDigit
+//  Description : accept character from user and check whether it is digit or not
 //  Input :     Bool
 //  Output :                
 //  Author : Pallavi Kishanrao Hivrale
@@ -20,9 +20,9 @@
 ////////////////////////////////////////////////////////////////////////
 
 typedef int BOOL;
-BOOL ChkAlpha(char ch)
+BOOL ChkDigit(char ch)
 {
-   if((ch>='A' && ch<='Z') || (ch>='a' && ch<='z'))
+   if(ch>='0' && ch<='9')
    {
     return TRUE;
    }
@@ -47,25 +47,24 @@ int main()
    printf("Enter the character : \n");
    scanf("%c",&cValue);
 
-   bRet = ChkAlpha(cValue);
+   bRet = ChkDigit(cValue);
 
    if(bRet == TRUE)
    {
-    printf("it is alphabet");
+      printf("it is digit");
    }
    else 
    {
-    printf("it is not a alphabet");
+      printf("it is not a digit");
    }
 
-    return 0;
+   return 0;
 }
 
 ////////////////////////////////////////////////////////////////////////
 //
 //  Test cases successfully handled by application
 //
-//  Input:   iRow= 6  iCol= 6
-//  Output : 
+//  Input/Output :    F-TRUE, d-FALSE               
 //  
 ////////////////////////////////////////////////////////////////////////

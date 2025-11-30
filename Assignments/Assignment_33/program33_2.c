@@ -11,7 +11,7 @@
 ////////////////////////////////////////////////////////////////////////
 //
 //  Function Name : CheckAlpha
-//  Description : accept character from user and check whether it is alphabet or not(A-Z a-z)
+//  Description : accept character from user and check whether it is capital alphabet or not(A-Z)
 //  Input :     Bool
 //  Output :                
 //  Author : Pallavi Kishanrao Hivrale
@@ -20,9 +20,9 @@
 ////////////////////////////////////////////////////////////////////////
 
 typedef int BOOL;
-BOOL ChkAlpha(char ch)
+BOOL ChkCapital(char ch)
 {
-   if((ch>='A' && ch<='Z') || (ch>='a' && ch<='z'))
+   if(ch>='A' && ch<='Z')
    {
     return TRUE;
    }
@@ -47,25 +47,24 @@ int main()
    printf("Enter the character : \n");
    scanf("%c",&cValue);
 
-   bRet = ChkAlpha(cValue);
+   bRet = ChkCapital(cValue);
 
    if(bRet == TRUE)
    {
-    printf("it is alphabet");
+      printf("it is capital alphabet");
    }
    else 
    {
-    printf("it is not a alphabet");
+      printf("it is not a capital alphabet");
    }
 
-    return 0;
+   return 0;
 }
 
 ////////////////////////////////////////////////////////////////////////
 //
 //  Test cases successfully handled by application
 //
-//  Input:   iRow= 6  iCol= 6
-//  Output : 
+//  Input/Output :    F-TRUE, d-FALSE               
 //  
 ////////////////////////////////////////////////////////////////////////

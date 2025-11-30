@@ -5,13 +5,10 @@
 ////////////////////////////////////////////////////////////////////////
 
 #include<stdio.h>
-#define TRUE 1
-#define FALSE 0
-
 ////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CheckAlpha
-//  Description : accept character from user and check whether it is alphabet or not(A-Z a-z)
+//  Function Name : DisplaySchedule
+//  Description : accept character from user and check whether it is small case or not
 //  Input :     Bool
 //  Output :                
 //  Author : Pallavi Kishanrao Hivrale
@@ -19,18 +16,38 @@
 //
 ////////////////////////////////////////////////////////////////////////
 
-typedef int BOOL;
-BOOL ChkAlpha(char ch)
+void DisplaySchedule(char chDiv)
 {
-   if((ch>='A' && ch<='Z') || (ch>='a' && ch<='z'))
+   chDiv = toupper(chDiv);
+
+   switch(chDiv)
    {
-    return TRUE;
+      case 'A':
+      {
+         printf("Your exam is at 7:00 AM\n");
+         break;
+      }
+      case 'B':
+      {
+         printf("Your exam is at 8:30 AM\n");
+         break;
+      }
+      case 'C':
+      {
+         printf("Your exam is at 9:20 AM\n");
+         break;
+      }
+      case 'D':
+      {
+         printf("Your exam is at 10:30 AM\n");
+         break;
+      }
+      default:
+      {
+         printf("Invalid division! Please enter A, B, C, or D.\n");
+         break;
+      }
    }
-   else 
-   {
-    return FALSE;
-   }
-   
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -42,30 +59,19 @@ BOOL ChkAlpha(char ch)
 int main()
 {
    char cValue = '\0';
-   BOOL bRet = FALSE;
 
-   printf("Enter the character : \n");
+   printf("Enter the division : \n");
    scanf("%c",&cValue);
 
-   bRet = ChkAlpha(cValue);
+   DisplaySchedule(cValue);
 
-   if(bRet == TRUE)
-   {
-    printf("it is alphabet");
-   }
-   else 
-   {
-    printf("it is not a alphabet");
-   }
-
-    return 0;
+   return 0;
 }
 
 ////////////////////////////////////////////////////////////////////////
 //
 //  Test cases successfully handled by application
 //
-//  Input:   iRow= 6  iCol= 6
-//  Output : 
+//  Input/Output :    g-TRUE, D-FALSE               
 //  
 ////////////////////////////////////////////////////////////////////////
