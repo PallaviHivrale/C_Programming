@@ -1,33 +1,36 @@
+
 ////////////////////////////////////////////////////////////////////////
 //
 // Required Header Files
 //
 ////////////////////////////////////////////////////////////////////////
+
 #include<stdio.h>
 
 ////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : Reverse
-//  Description :  accept string from user convert it  lower case     
+//  Function Name : DisplayDigits
+//  Description : accept string from user and count number of white spaces     
 // 
 //  Input  :   char*
-//  Output :   void        
+//  Output :   int        
 //  Author :   Pallavi Kishanrao Hivrale
 //  Date   :   29/11/25
 //
 ////////////////////////////////////////////////////////////////////////
-void strlwrx(char str[])
+int CountWhite(char *str)
 {
+    int iCount = 0;
+
     while(*str != '\0')
     {
-        if(*str >= 'A' && *str<= 'Z')
+        if(*str == ' ')
         {
-            *str = *str + 32;
+            iCount++;
         }
         str++;
     }
-    
-
+    return iCount;
 }
 ////////////////////////////////////////////////////////////////////////
 //
@@ -37,14 +40,15 @@ void strlwrx(char str[])
 
 int main()
 {
-    char arr[20];
+    char arr[50];
+    int iRet = 0;
     
     printf("Enter string : ");
     scanf("%[^'\n]s",arr);
 
-    strlwrx(arr);
+    iRet = CountWhite(arr);
 
-    printf("updated string is %s : ",arr);
+    printf("Number of white spaces : %d\n",iRet);
 
     return 0;
 
@@ -53,7 +57,13 @@ int main()
 //
 //  Test cases successfully handled by application
 //
-//  Input  :  Marvellous Multi OS
-//  Output :  marvellous multi OS
+//  Input  :  Marvellous
+//  Output :  0
+//
+//  Input  :  Marvellous Infosystems
+//  Output :  1
+//
+//  Input  :  Marvellous Infosystem by Pallavi Hivrale
+//  Output :  4
 //
 ////////////////////////////////////////////////////////////////////////

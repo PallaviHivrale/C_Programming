@@ -1,14 +1,16 @@
+
 ////////////////////////////////////////////////////////////////////////
 //
 // Required Header Files
 //
 ////////////////////////////////////////////////////////////////////////
+
 #include<stdio.h>
 
 ////////////////////////////////////////////////////////////////////////
 //
 //  Function Name : Reverse
-//  Description :  accept string from user convert it  lower case     
+//  Description : accept string from user convert it  upper case     
 // 
 //  Input  :   char*
 //  Output :   void        
@@ -16,18 +18,17 @@
 //  Date   :   29/11/25
 //
 ////////////////////////////////////////////////////////////////////////
-void strlwrx(char str[])
+void struprx(char str[])
 {
     while(*str != '\0')
     {
-        if(*str >= 'A' && *str<= 'Z')
+        if(*str >= 'a' && *str<= 'z')
         {
-            *str = *str + 32;
+            *str = *str - 32;
         }
         str++;
     }
     
-
 }
 ////////////////////////////////////////////////////////////////////////
 //
@@ -42,7 +43,7 @@ int main()
     printf("Enter string : ");
     scanf("%[^'\n]s",arr);
 
-    strlwrx(arr);
+    struprx(arr);
 
     printf("updated string is %s : ",arr);
 
@@ -54,6 +55,6 @@ int main()
 //  Test cases successfully handled by application
 //
 //  Input  :  Marvellous Multi OS
-//  Output :  marvellous multi OS
+//  Output :  MARVELLOUS MULTI OS
 //
 ////////////////////////////////////////////////////////////////////////
