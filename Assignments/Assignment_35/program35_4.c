@@ -6,31 +6,35 @@
 
 #include<stdio.h>
 
+#define TRUE 1
+#define FALSE 0
+typedef int BOOL;
+
 ////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CountCapital
-//  Description : count number of capital character        
+//  Function Name : ChkVowel
+//  Description : check whether string contain vowels or not       
 // 
-//  Input :    char*
-//  Output :   int           
-//  Author : Pallavi Kishanrao Hivrale
-//  Date :   28/11/25
+//  Input  :   char*
+//  Output :   BOOL        
+//  Author :   Pallavi Kishanrao Hivrale
+//  Date   :   29/11/25
 //
 ////////////////////////////////////////////////////////////////////////
 
-int CountCapital(char *str)
+BOOL ChkVowel(char *str)
 {
-   int iCount = 0;
-
    while(*str != '\0')
    {
-      if((*str >= 'A') && (*str <= 'Z'))
+      if((*str=='a'||*str=='e'||*str=='i'||*str=='o'||*str=='u' ||
+         *str=='A'||*str=='E'||*str=='I'||*str=='O'||*str=='U'))
       {
-         iCount++;
+         return TRUE;
       }
+    
       str++;
    }
-   return iCount;
+   return FALSE;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -42,14 +46,20 @@ int CountCapital(char *str)
 int main()
 {
    char arr[20];
-   int iRet = 0;
+   BOOL bRet = FALSE;
 
    printf("Enter string: ");
-   scanf("%[^\n]s", arr);
+   scanf("%[^'\n']s", arr);
 
-   iRet = CountCapital(arr);
-
-   printf("%d", iRet);
+   bRet = ChkVowel(arr);
+   if(bRet == TRUE)
+   {
+      printf("contains Vowel");
+   }
+   else
+   {
+      printf("there is no vowel");
+   }
 
    return 0;
 }
@@ -58,6 +68,11 @@ int main()
 //
 //  Test cases successfully handled by application
 //
-//  Input  :   Marvellous Muti OS
-//  Output :   4
+//  Input  :  marvellous
+//  Output :  TRUE
+//  Input  :  Demo
+//  output :  TRUE
+//  Input  :  xyz
+//  output :  FALSE
+//
 ////////////////////////////////////////////////////////////////////////

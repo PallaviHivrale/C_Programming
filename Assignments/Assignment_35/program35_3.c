@@ -8,29 +8,42 @@
 
 ////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CountCapital
-//  Description : count number of capital character        
+//  Function Name : Diffrence
+//  Description : diffrence between frequency of small character
+//                and frequency of capital character        
 // 
-//  Input :    char*
+//  Input  :   char*
 //  Output :   int           
-//  Author : Pallavi Kishanrao Hivrale
-//  Date :   28/11/25
+//  Author :   Pallavi Kishanrao Hivrale
+//  Date   :   28/11/25
 //
 ////////////////////////////////////////////////////////////////////////
 
-int CountCapital(char *str)
+int Diffrence(char *str)
 {
-   int iCount = 0;
+   int iCountCapital = 0;
+   int iCountSmall = 0;
+   if(*str <0)
+   {
+      *str = -*str;
+   }
 
    while(*str != '\0')
    {
       if((*str >= 'A') && (*str <= 'Z'))
       {
-         iCount++;
+         iCountCapital++;
+      }
+      else if(*str >= 'a' && *str <= 'z')
+      {
+         iCountSmall++;
       }
       str++;
    }
-   return iCount;
+   printf("number of small character : %d\n",iCountSmall);
+   printf("number of Capital character : %d\n",iCountCapital);
+
+   return iCountSmall - iCountCapital;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -45,11 +58,11 @@ int main()
    int iRet = 0;
 
    printf("Enter string: ");
-   scanf("%[^\n]s", arr);
+   scanf("%[^'\n']s", arr);
 
-   iRet = CountCapital(arr);
+   iRet = Diffrence(arr);
 
-   printf("%d", iRet);
+   printf("%d",iRet);
 
    return 0;
 }

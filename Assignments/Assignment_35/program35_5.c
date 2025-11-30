@@ -8,29 +8,32 @@
 
 ////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CountCapital
-//  Description : count number of capital character        
+//  Function Name : Reverse
+//  Description : display string in reverse order      
 // 
-//  Input :    char*
-//  Output :   int           
-//  Author : Pallavi Kishanrao Hivrale
-//  Date :   28/11/25
+//  Input  :   char*
+//  Output :   void        
+//  Author :   Pallavi Kishanrao Hivrale
+//  Date   :   29/11/25
 //
 ////////////////////////////////////////////////////////////////////////
 
-int CountCapital(char *str)
+void Reverse(char *str)
 {
-   int iCount = 0;
+   int iCnt =0;
 
-   while(*str != '\0')
+   while(str[iCnt] != '\0')
    {
-      if((*str >= 'A') && (*str <= 'Z'))
-      {
-         iCount++;
-      }
-      str++;
+      iCnt++;
    }
-   return iCount;
+   iCnt--;
+
+   while(iCnt>=0)
+   {
+      printf("%c",str[iCnt]);
+      iCnt--;
+   }
+  
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -42,14 +45,11 @@ int CountCapital(char *str)
 int main()
 {
    char arr[20];
-   int iRet = 0;
 
    printf("Enter string: ");
-   scanf("%[^\n]s", arr);
+   scanf("%[^'\n']s", arr);
 
-   iRet = CountCapital(arr);
-
-   printf("%d", iRet);
+   Reverse(arr);
 
    return 0;
 }
@@ -58,6 +58,7 @@ int main()
 //
 //  Test cases successfully handled by application
 //
-//  Input  :   Marvellous Muti OS
-//  Output :   4
+//  Input  :  marvellous
+//  Output :  suollevran
+//
 ////////////////////////////////////////////////////////////////////////

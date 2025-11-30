@@ -8,8 +8,8 @@
 
 ////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : CountCapital
-//  Description : count number of capital character        
+//  Function Name : CountSmall
+//  Description : count number of small character        
 // 
 //  Input :    char*
 //  Output :   int           
@@ -18,13 +18,13 @@
 //
 ////////////////////////////////////////////////////////////////////////
 
-int CountCapital(char *str)
+int CountSmall(char *str)
 {
    int iCount = 0;
 
    while(*str != '\0')
    {
-      if((*str >= 'A') && (*str <= 'Z'))
+      if((*str >= 'a') && (*str <= 'z'))
       {
          iCount++;
       }
@@ -45,11 +45,11 @@ int main()
    int iRet = 0;
 
    printf("Enter string: ");
-   scanf("%[^\n]s", arr);
+   scanf("%[^'\n']s", arr);
 
-   iRet = CountCapital(arr);
+   iRet = CountSmall(arr);
 
-   printf("%d", iRet);
+   printf("%d",iRet);
 
    return 0;
 }
