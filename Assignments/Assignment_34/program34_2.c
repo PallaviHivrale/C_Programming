@@ -7,19 +7,27 @@
 #include<stdio.h>
 ////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : DisplayASCII
-//  Description : program which dispaly ASCII table table contains 
-//                symbol, decimal hexadecimal,octal representation of every member from 0 to 255
-//  Input :     Bool
-//  Output :                
+//  Function Name : Display
+//  Description : Convert uppercase to lowercase and lowercase to uppercase
+//  Input :    char
+//  Output :   char              
 //  Author : Pallavi Kishanrao Hivrale
-//  Date :   29/11/25
+//  Date :   28/11/25
 //
 ////////////////////////////////////////////////////////////////////////
 
-void DisplayASCII()
+char Display(char ch)
 {
-  // Logic
+   if(ch >= 'A' && (ch <= 'Z'))
+   {
+      ch = ch+32;
+   }
+   else  if(ch>= 'a' && (ch<='z'))
+   {
+      ch = ch-32;
+   }
+    printf("updated character is : %c\n",ch);
+   
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -30,8 +38,14 @@ void DisplayASCII()
 
 int main()
 {
-   DisplayASCII();
-   
+   char cValue = '\0';
+   char cRet ='\0';
+
+   printf("Enter the character : \n");
+   scanf("%c",&cValue);
+
+   Display(cValue);
+    
    return 0;
 }
 

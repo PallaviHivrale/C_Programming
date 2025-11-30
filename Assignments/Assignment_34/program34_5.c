@@ -5,21 +5,23 @@
 ////////////////////////////////////////////////////////////////////////
 
 #include<stdio.h>
+
 ////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : DisplayASCII
-//  Description : program which dispaly ASCII table table contains 
-//                symbol, decimal hexadecimal,octal representation of every member from 0 to 255
-//  Input :     Bool
-//  Output :                
+//  Function Name : Dispaly
+//  Description : Accept character from user and display its
+//                ASCII value in decimal,octal,and hexadecimal format        
+// 
+//  Input :    char
+//  Output :   BOOL            
 //  Author : Pallavi Kishanrao Hivrale
-//  Date :   29/11/25
+//  Date :   28/11/25
 //
 ////////////////////////////////////////////////////////////////////////
 
-void DisplayASCII()
+void Display(char ch)
 {
-  // Logic
+   //    logic
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -30,7 +32,12 @@ void DisplayASCII()
 
 int main()
 {
-   DisplayASCII();
+   char cValue = '\0';
+
+   printf("Enter the character : \n");
+   scanf("%c",&cValue);
+
+   Display(cValue);
    
    return 0;
 }
@@ -39,6 +46,8 @@ int main()
 //
 //  Test cases successfully handled by application
 //
-//  Input/Output :    g-TRUE, D-FALSE               
-//  
+//  Input  :   A
+//  Output :   Decimal     65
+//             octal       0101
+//             hexadecimal 0X41
 ////////////////////////////////////////////////////////////////////////
