@@ -6,34 +6,34 @@
 ////////////////////////////////////////////////////////////////////////
 
 #include<stdio.h>
-#define TRUE 1
-#define FALSE 0
-typedef int BOOL;
 
 ////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : DisplayDigits
-//  Description : accept string from user and count number of white spaces     
+//  Function Name : FirstChar
+//  Description : accept one charcter return index of first occurance 
+//                 of that character     
 // 
 //  Input  :   char*
-//  Output :   BOOL       
+//  Output :   int       
 //  Author :   Pallavi Kishanrao Hivrale
 //  Date   :   29/11/25
 //
 ////////////////////////////////////////////////////////////////////////
-BOOL ChkChar(char *str, char ch)
+int LastChar(char *str, char ch)
 {
-    
+    int firstCount = 0; 
+    int lastCount = -1;  
 
-    while(*str != '\0')
+    while(str[firstCount] != '\0')
     {
-        if(*str == ch)
+        if(str[firstCount] == ch)
         {
-            return TRUE;
+            lastCount = firstCount;          // return index
         }
-        str++;
+        firstCount++;
     }
-    return FALSE;
+    return lastCount;  // character not found
+   
 }
 ////////////////////////////////////////////////////////////////////////
 //
@@ -45,7 +45,7 @@ int main()
 {
     char arr[20];
     char cValue = 0;
-    BOOL bRet = FALSE;
+    int iRet = 0;
     
     printf("Enter string : ");
     scanf("%[^'\n]s",arr);
@@ -53,17 +53,10 @@ int main()
     printf("Enter the character : ");
     scanf(" %c",&cValue);
 
-    bRet = ChkChar(arr, cValue);
+    iRet = LastChar(arr, cValue);
 
-    if(bRet == TRUE)
-    {
-        printf("character found");
-    }
-    else 
-    {
-        printf("character not found");
-    }
-
+    printf("character location is %d",iRet);
+    
     return 0;
 }
 ////////////////////////////////////////////////////////////////////////
@@ -71,12 +64,12 @@ int main()
 //  Test cases successfully handled by application
 //
 //  Input  :  Marvellous multi OS
-//            E
-//  Output :  TRUE
+//            w
+//  Output :  -1
 //
 //  Input  :  Marvellous Multi OS
-//            W
-//  Output :  FALSE
+//            e
+//  Output :  4
 //
 
 //

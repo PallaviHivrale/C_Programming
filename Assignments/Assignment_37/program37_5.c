@@ -6,34 +6,35 @@
 ////////////////////////////////////////////////////////////////////////
 
 #include<stdio.h>
-#define TRUE 1
-#define FALSE 0
-typedef int BOOL;
 
 ////////////////////////////////////////////////////////////////////////
 //
-//  Function Name : DisplayDigits
-//  Description : accept string from user and count number of white spaces     
+//  Function Name : FirstChar
+//  Description : accept string from user reverse that string in place     
 // 
 //  Input  :   char*
-//  Output :   BOOL       
+//  Output :   int       
 //  Author :   Pallavi Kishanrao Hivrale
 //  Date   :   29/11/25
 //
 ////////////////////////////////////////////////////////////////////////
-BOOL ChkChar(char *str, char ch)
+void StrRevX(char *str)
 {
-    
+   char *temp = str;
 
     while(*str != '\0')
     {
-        if(*str == ch)
-        {
-            return TRUE;
-        }
         str++;
-    }
-    return FALSE;
+    }  
+    str--;
+
+    while(str >= temp)
+    {
+        printf("%c",*str);
+        str--;
+    }     
+    printf("\n"); 
+   
 }
 ////////////////////////////////////////////////////////////////////////
 //
@@ -44,40 +45,25 @@ BOOL ChkChar(char *str, char ch)
 int main()
 {
     char arr[20];
-    char cValue = 0;
-    BOOL bRet = FALSE;
+   
     
     printf("Enter string : ");
     scanf("%[^'\n]s",arr);
 
-    printf("Enter the character : ");
-    scanf(" %c",&cValue);
+    StrRevX(arr);
 
-    bRet = ChkChar(arr, cValue);
-
-    if(bRet == TRUE)
-    {
-        printf("character found");
-    }
-    else 
-    {
-        printf("character not found");
-    }
-
+   
+    
     return 0;
 }
 ////////////////////////////////////////////////////////////////////////
 //
 //  Test cases successfully handled by application
 //
-//  Input  :  Marvellous multi OS
-//            E
-//  Output :  TRUE
+//  Input  :  abcd
+//  Output :  dcba
 //
-//  Input  :  Marvellous Multi OS
-//            W
-//  Output :  FALSE
-//
-
+//  Input  :  abba
+//            abba
 //
 ////////////////////////////////////////////////////////////////////////
